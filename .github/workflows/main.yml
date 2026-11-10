@@ -1,0 +1,40 @@
+
+name: Build Swaminathan Tailoring APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract Android project
+        run: |
+          unzip -o swaminathan_tailoring_android_mobile_build.zip -d .
+          ls -la swaminathan_android_project
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build APK
+        run: gradle -p swaminathan_android_project assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Swaminathan-Tailoring-APK
+          path: swaminathan_android_project/app/build/outputs/apk/debug/app-debug.apk
+          
