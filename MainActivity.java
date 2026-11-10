@@ -17,9 +17,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.util.Base64;
 import android.widget.Toast;
-import android.content.Context;
-import android.print.PrintAttributes;
-import android.print.PrintManager;
 import java.io.OutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -48,11 +45,7 @@ public class MainActivity extends Activity {
                     FileChooserParams params) {
                 if (filePathCallback != null) filePathCallback.onReceiveValue(null);
                 filePathCallback = callback;
-                Intent intent;
-                try { intent = params.createIntent(); }
-                catch (Exception ex) { intent = new Intent(Intent.ACTION_GET_CONTENT); intent.setType("image/*"); intent.addCategory(Intent.CATEGORY_OPENABLE); }
-                intent.setType("image/*");
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                Intent intent = params.createIntent();
                 try { startActivityForResult(intent, FILE_CHOOSER_REQUEST); }
                 catch (Exception e) { filePathCallback = null; return false; }
                 return true;
@@ -65,25 +58,6 @@ public class MainActivity extends Activity {
     }
 
     public class AndroidBridge {
-        @JavascriptInterface
-        public void printInvoice() {
-            runOnUiThread(() -> {
-                try {
-                    PrintManager printManager = (PrintManager) getSystemService(Context.PRINT_SERVICE);
-                    if (printManager == null) throw new IllegalStateException("Print service unavailable");
-                    String jobName = "Swaminathan Tailoring Invoice";
-                    PrintAttributes attributes = new PrintAttributes.Builder()
-                        .setMediaSize(PrintAttributes.MediaSize.ISO_A4)
-                        .setResolution(new PrintAttributes.Resolution("pdf", "pdf", 300, 300))
-                        .setMinMargins(PrintAttributes.Margins.NO_MARGINS)
-                        .build();
-                    printManager.print(jobName, webView.createPrintDocumentAdapter(jobName), attributes);
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "Print failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
-            });
-        }
-
         @JavascriptInterface
         public void saveBase64File(String filename, String mimeType, String base64) {
             runOnUiThread(() -> {

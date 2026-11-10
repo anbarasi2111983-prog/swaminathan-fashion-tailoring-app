@@ -21,6 +21,3 @@ SWAMINATHAN FASHION TAILORING - Android Studio Project
 - PDF/Excel library-கள் CDN-ல் இருந்து load ஆகுவதால் அந்த வசதிகளுக்கு internet தேவை.
 - Excel backup spreadsheet-ல் order, items, measurements சேரும்; uploaded photos spreadsheet backup-ல் சேராது.
 - Browser storage அளவு வரம்புடையது. நிறைய புகைப்படங்களை சேமித்தால் இடம் நிரம்பலாம்; Excel backup-ஐ அடிக்கடி எடுக்கவும்.
-
-
-புதிய பதிப்பு: Android Gallery-யிலிருந்து image MIME type மாறினாலும் photo upload செய்யும் வகையில் மாற்றப்பட்டுள்ளது; படங்கள் அளவு குறைக்கப்பட்டு சேமிக்கப்படும். Android Print service வழியாக invoice print/PDF செய்யும் வசதி சேர்க்கப்பட்டுள்ளது.
