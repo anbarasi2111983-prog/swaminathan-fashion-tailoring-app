@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173b35">
+<title>SWAMINATHAN FASHION TAILORING | Order Manager</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#173b35;--green2:#24564b;--gold:#c79a52;--cream:#f6f4ef;--ink:#202a27;--muted:#718079;--line:#e5e9e5}
+*{box-sizing:border-box}body{background:#f2f4f1;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:14px}.topbar{background:var(--green);color:white;padding:22px 0;border-bottom:4px solid var(--gold)}.brand-mark{width:48px;height:48px;border:1px solid #c79a52;border-radius:50%;display:grid;place-items:center;color:#e7c68e;font-family:Georgia;font-size:25px}.shop-name{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,29px);letter-spacing:.6px;margin:0}.tagline{color:#d4dfd9;font-size:11px;letter-spacing:2px;text-transform:uppercase}.page-wrap{max-width:1220px;margin:26px auto;padding:0 16px}.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px;box-shadow:0 4px 18px rgba(25,55,45,.035)}.section-title{font-size:14px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin:0 0 18px;display:flex;align-items:center;gap:9px}.section-title:before{content:"";width:4px;height:17px;background:var(--gold);border-radius:4px}.form-label{font-weight:600;font-size:12px;color:#53635c;margin-bottom:6px}.form-control,.form-select{border-color:#dce3dd;border-radius:8px;min-height:42px;font-size:13px}.form-control:focus,.form-select:focus{border-color:#7eaa99;box-shadow:0 0 0 .2rem rgba(36,86,75,.1)}textarea.form-control{min-height:78px}.btn{border-radius:8px;font-weight:600;font-size:13px;padding:10px 15px}.btn-primary{background:var(--green);border-color:var(--green)}.btn-primary:hover{background:var(--green2);border-color:var(--green2)}.btn-gold{background:var(--gold);border-color:var(--gold);color:#1e2c26}.btn-outline-green{border:1px solid var(--green);color:var(--green)}.btn-outline-green:hover{background:var(--green);color:white}.table thead th{background:#f3f6f3;color:#53635c;font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--line);white-space:nowrap}.table td{vertical-align:middle}.table .form-control{min-width:75px}.amount-card{background:#f4f7f4;border:1px solid #e0e9e2;border-radius:10px;padding:13px}.amount-card small{color:var(--muted);font-size:11px}.amount-card strong{display:block;font-size:19px;color:var(--green);margin-top:4px}.grand-card{background:var(--green);color:white;border-radius:12px;padding:18px}.grand-card small{color:#cbd9d2}.grand-card strong{font-size:25px;display:block;margin-top:3px}.photo-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.photo-item{width:108px;height:108px;border:1px solid var(--line);border-radius:9px;overflow:hidden;position:relative;background:#f5f6f4}.photo-item img{width:100%;height:100%;object-fit:cover}.photo-item button{position:absolute;right:4px;top:4px;border:0;border-radius:50%;background:#a32d2d;color:#fff;width:23px;height:23px;line-height:20px}.toolbar{display:flex;flex-wrap:wrap;gap:9px}.search-wrap{max-width:440px}.status-pill{font-size:11px;font-weight:700;padding:5px 9px;border-radius:30px;background:#edf3ee;color:#24564b}.empty{text-align:center;color:#829087;padding:24px}.footer-note{color:#89958e;font-size:11px;text-align:center;padding:15px}.signature-line{border-top:1px solid #77847d;padding-top:7px;text-align:center;color:#59665f;font-size:11px;margin-top:45px}.order-row{cursor:pointer}.order-row:hover{background:#f7faf7}.muted{color:var(--muted)}#invoicePrint{display:none}
+@media(max-width:700px){.panel{padding:16px}.topbar{padding:17px 0}.page-wrap{margin:16px auto;padding:0 10px}.toolbar .btn{flex:1}.table-responsive{font-size:12px}.table .form-control{min-width:65px}.search-wrap{max-width:none;width:100%}}
+@media print{body *{visibility:hidden!important}#invoicePrint,#invoicePrint *{visibility:visible!important}#invoicePrint{display:block!important;position:absolute;left:0;top:0;width:190mm;max-width:190mm;padding:0;background:#fff;color:#111;font-family:Arial,sans-serif}#invoicePrint table{width:100%!important;table-layout:fixed;border-collapse:collapse}#invoicePrint tr{break-inside:avoid;page-break-inside:avoid}#invoicePrint th,#invoicePrint td{overflow-wrap:anywhere}#invoicePrint img{max-width:32mm;height:auto} .no-print{display:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="container d-flex align-items-center gap-3">
+  <div class="brand-mark">S</div><div><h1 class="shop-name">SWAMINATHAN FASHION TAILORING</h1><div class="tagline">Perfect fit · Fine craftsmanship</div></div>
+ </div>
+</header>
+<main class="page-wrap">
+ <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+  <div><h2 class="h5 fw-bold mb-1">Customer Order & Measurement</h2><div class="muted small">Create, manage and print tailoring orders</div></div>
+  <div class="toolbar no-print"><button class="btn btn-outline-green" id="newBtn">＋ New order</button><button class="btn btn-primary" id="saveBtn">Save order</button><button class="btn btn-gold" id="pdfBtn">↓ DOWNLOAD PDF</button></div>
+ </div>
+ <section class="panel">
+  <h3 class="section-title">Customer & order details</h3>
+  <div class="row g-3">
+   <div class="col-md-4"><label class="form-label">Customer name *</label><input id="customer" class="form-control" placeholder="Full name" required></div>
+   <div class="col-md-4"><label class="form-label">Mobile number</label><input id="mobile" class="form-control" inputmode="tel" maxlength="15" placeholder="10-digit mobile number"></div>
+   <div class="col-md-4"><label class="form-label">Order number</label><input id="orderNo" class="form-control" readonly></div>
+   <div class="col-md-6"><label class="form-label">Address</label><textarea id="address" class="form-control" placeholder="Customer address"></textarea></div>
+   <div class="col-md-3"><label class="form-label">Order date</label><input id="orderDate" type="date" class="form-control"></div>
+   <div class="col-md-3"><label class="form-label">Delivery date</label><input id="deliveryDate" type="date" class="form-control"></div>
+  </div>
+ </section>
+ <section class="panel">
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3"><h3 class="section-title mb-0">Material / stitching details</h3><button class="btn btn-sm btn-outline-green no-print" id="addRow">＋ Add item</button></div>
+  <div class="table-responsive"><table class="table align-middle mb-0" id="itemsTable"><thead><tr><th style="width:55px">S.No</th><th>Material / Dress name</th><th style="width:110px">Quantity</th><th style="width:130px">Rate (₹)</th><th style="width:145px">Total (₹)</th><th class="no-print" style="width:55px"></th></tr></thead><tbody id="itemsBody"></tbody></table></div>
+  <div class="text-end mt-3"><span class="muted me-2">Grand total</span><strong class="fs-4" id="tableGrand">₹0.00</strong></div>
+ </section>
+ <section class="panel">
+  <h3 class="section-title">Payment details</h3>
+  <div class="row g-3 align-items-end">
+   <div class="col-md-4"><div class="amount-card"><small>Total amount</small><strong id="payTotal">₹0.00</strong></div></div>
+   <div class="col-md-4"><label class="form-label">Advance amount (₹)</label><input id="advance" class="form-control" type="number" min="0" step="0.01" value="0"></div>
+   <div class="col-md-4"><div class="amount-card"><small>Balance amount</small><strong id="balance">₹0.00</strong></div></div>
+   <div class="col-md-6"><label class="form-label">Payment status</label><select id="paymentStatus" class="form-select"><option>Pending</option><option>Partially Paid</option><option>Paid</option></select></div>
+   <div class="col-md-6"><div class="grand-card"><small>Amount in words</small><strong id="words" style="font-size:16px">Rupees Zero Only</strong></div></div>
+  </div>
+ </section>
+
+ <section class="panel">
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+   <h3 class="section-title mb-0">Garment measurements</h3>
+   <button class="btn btn-sm btn-outline-green no-print" id="addMeasurement">＋ Add garment</button>
+  </div>
+  <div class="muted small mb-3">Record measurements in inches. Add a separate card for each garment in the order.</div>
+  <div id="measurementsList" class="row g-3"></div>
+ </section>
+
+ <section class="panel">
+  <h3 class="section-title">Customer & design photos</h3>
+  <label class="form-label">Upload multiple JPG, JPEG or PNG images</label><input id="photosInput" class="form-control" type="file" accept="image/jpeg,image/png" multiple>
+  <div class="muted small mt-2">Photos are saved with the order in this browser and included in the PDF. Keep image sizes modest to avoid browser storage limits.</div>
+  <div class="photo-grid" id="photoGrid"></div>
+ </section>
+ <section class="panel no-print">
+  <h3 class="section-title">Saved orders</h3>
+
+  <div class="d-flex flex-wrap gap-2 mb-3">
+   <button class="btn btn-outline-green" id="exportExcel">↓ Export Excel backup</button>
+   <label class="btn btn-outline-secondary mb-0" for="importExcel">↑ Restore from Excel</label>
+   <input id="importExcel" type="file" accept=".xlsx,.xls" hidden>
+  </div>
+  <div class="muted small mb-3">Excel backups include customer, order, item and measurement details. Uploaded photos remain in this browser and are not included in the spreadsheet.</div>
+
+  <div class="d-flex flex-wrap gap-2 align-items-center mb-3"><input id="searchOrders" class="form-control search-wrap" placeholder="Search by customer name or mobile number"><span class="muted small" id="orderCount"></span></div>
+  <div class="table-responsive"><table class="table table-hover align-middle"><thead><tr><th>Order no.</th><th>Customer</th><th>Mobile</th><th>Date</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead><tbody id="ordersBody"></tbody></table></div>
+  <div class="muted small">Orders are stored only in this browser's LocalStorage. Export/backup your browser data separately for long-term safekeeping.</div>
+ </section>
+ <div class="toolbar justify-content-center mb-4 no-print"><button class="btn btn-outline-green" id="printBtn">Print invoice</button><button class="btn btn-outline-secondary" id="clearBtn">Clear form</button></div>
+ <div class="footer-note">SWAMINATHAN FASHION TAILORING · Customer order management</div>
+</main>
+<div id="invoicePrint"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script>
+(()=> {
+ 'use strict';
+ const $=id=>document.getElementById(id), STORE='swaminathan_tailoring_orders_v1';
+ let photos=[], editingId=null, items=[], measurements=[];
+ const money=n=>'₹'+(Number(n)||0).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+ const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ function loadOrders(){try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch(e){return []}}
+ function persist(list){try{localStorage.setItem(STORE,JSON.stringify(list));return true}catch(e){alert('Could not save: browser storage may be full. Remove some photos or old orders and try again.');return false}}
+ function nextOrderNo(){const year=new Date().getFullYear();const nums=loadOrders().map(o=>Number((o.orderNo||'').split('-').pop())).filter(Number.isFinite);return `SFT-${year}-${String(Math.max(0,...nums)+1).padStart(4,'0')}`}
+ function numberWords(num){num=Math.round((Number(num)||0)*100)/100;const ones=['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'],tens=['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];function under(n){if(n<20)return ones[n];if(n<100)return tens[Math.floor(n/10)]+(n%10?' '+ones[n%10]:'');if(n<1000)return ones[Math.floor(n/100)]+' Hundred'+(n%100?' '+under(n%100):'');return ''}function indian(n){if(n<1000)return under(n);let out='';for(const [v,label] of [[10000000,'Crore'],[100000,'Lakh'],[1000,'Thousand']])if(n>=v){let q=Math.floor(n/v);out+=indian(q)+' '+label+' ';n%=v}return (out+under(n)).trim()}let rupees=Math.floor(num),paise=Math.round((num-rupees)*100);return 'Rupees '+indian(rupees)+(paise?' and '+indian(paise)+' Paise':'')+' Only'}
+ function addItem(item={name:'',qty:1,rate:0}){items.push({name:item.name||'',qty:Number(item.qty??1),rate:Number(item.rate)||0});renderItems()}
+ function renderItems(){const body=$('itemsBody');body.innerHTML='';items.forEach((it,i)=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${i+1}</td><td><input class="form-control item-name" aria-label="Material or dress name" value="${esc(it.name)}" placeholder="e.g. Shirt stitching"></td><td><input class="form-control item-qty" aria-label="Quantity" type="number" min="0" step="0.01" value="${it.qty}"></td><td><input class="form-control item-rate" aria-label="Rate" type="number" min="0" step="0.01" value="${it.rate}"></td><td class="fw-semibold item-total">${money(it.qty*it.rate)}</td><td class="no-print"><button class="btn btn-sm btn-outline-danger remove-item" aria-label="Delete row">×</button></td>`;tr.querySelector('.item-name').addEventListener('input',e=>{it.name=e.target.value});tr.querySelector('.item-qty').addEventListener('input',e=>{it.qty=Math.max(0,Number(e.target.value)||0);tr.querySelector('.item-total').textContent=money(it.qty*it.rate);calculate()});tr.querySelector('.item-rate').addEventListener('input',e=>{it.rate=Math.max(0,Number(e.target.value)||0);tr.querySelector('.item-total').textContent=money(it.qty*it.rate);calculate()});tr.querySelector('.remove-item').addEventListener('click',()=>{items.splice(i,1);renderItems()});body.appendChild(tr)});calculate()}
+
+ const measurementFields={
+  Shirt:['Chest','Waist','Shoulder','Sleeve length','Shirt length','Neck'],
+  Pant:['Waist','Hip','Thigh','Inseam','Outseam','Bottom'],
+  Blouse:['Bust','Waist','Shoulder','Sleeve length','Blouse length','Front neck','Back neck'],
+  'Salwar / Churidar':['Waist','Hip','Thigh','Inseam','Outseam','Ankle'],
+  'Other garment':['Length','Chest / Bust','Waist','Hip','Shoulder','Sleeve','Other']
+ };
+ function addMeasurement(m={}){measurements.push({type:m.type||'Shirt',values:{...(m.values||{})},notes:m.notes||''});renderMeasurements()}
+ function renderMeasurements(){
+  const host=$('measurementsList');host.innerHTML='';
+  measurements.forEach((m,i)=>{
+   const col=document.createElement('div');col.className='col-12 col-lg-6';
+   const card=document.createElement('div');card.className='border rounded-3 p-3 h-100';
+   const head=document.createElement('div');head.className='d-flex gap-2 align-items-center mb-3';
+   const sel=document.createElement('select');sel.className='form-select';sel.innerHTML=Object.keys(measurementFields).map(t=>`<option ${t===m.type?'selected':''}>${esc(t)}</option>`).join('');
+   const del=document.createElement('button');del.className='btn btn-sm btn-outline-danger';del.type='button';del.textContent='Remove';del.onclick=()=>{measurements.splice(i,1);renderMeasurements()};
+   head.append(sel,del);card.append(head);
+   const fields=document.createElement('div');fields.className='row g-2';
+   function buildFields(){fields.innerHTML='';measurementFields[m.type].forEach(label=>{const wrap=document.createElement('div');wrap.className='col-6';const l=document.createElement('label');l.className='form-label';l.textContent=label+' (in)';const input=document.createElement('input');input.className='form-control';input.placeholder='—';input.value=m.values[label]||'';input.addEventListener('input',()=>{m.values[label]=input.value});wrap.append(l,input);fields.append(wrap)})}
+   sel.onchange=()=>{m.type=sel.value;m.values={};buildFields()};
+   buildFields();card.append(fields);
+   const noteWrap=document.createElement('div');noteWrap.className='mt-2';noteWrap.innerHTML='<label class="form-label">Fit notes / instructions</label>';
+   const note=document.createElement('input');note.className='form-control';note.placeholder='e.g. slim fit, extra allowance';note.value=m.notes;note.oninput=()=>m.notes=note.value;noteWrap.append(note);card.append(noteWrap);
+   col.append(card);host.append(col);
+  });
+ }
+
+ function total(){return items.reduce((s,x)=>s+(Number(x.qty)||0)*(Number(x.rate)||0),0)}
+ function calculate(){let t=total(),a=Math.max(0,Number($('advance').value)||0),b=Math.max(0,t-a);$('tableGrand').textContent=money(t);$('payTotal').textContent=money(t);$('balance').textContent=money(b);$('words').textContent=numberWords(t);$('paymentStatus').value=b<=0&&t>0?'Paid':a>0?'Partially Paid':'Pending'}
+ function getForm(){return {id:editingId||('id-'+Date.now()+'-'+Math.random().toString(36).slice(2,7)),orderNo:$('orderNo').value,customer:$('customer').value.trim(),mobile:$('mobile').value.trim(),address:$('address').value.trim(),orderDate:$('orderDate').value,deliveryDate:$('deliveryDate').value,items:items.map(x=>({...x})),measurements:measurements.map(m=>({type:m.type,values:{...m.values},notes:m.notes})),total:total(),advance:Math.max(0,Number($('advance').value)||0),balance:Math.max(0,total()-Math.max(0,Number($('advance').value)||0)),status:$('paymentStatus').value,photos:[...photos],updatedAt:new Date().toISOString()}}
+ function validate(){if(!$('customer').value.trim()){alert('Please enter the customer name.');$('customer').focus();return false}if(items.length===0){alert('Please add at least one material or stitching item.');return false}return true}
+ function resetForm(){editingId=null;$('customer').value='';$('mobile').value='';$('address').value='';$('orderNo').value=nextOrderNo();$('orderDate').value=today();$('deliveryDate').value='';$('advance').value='0';$('paymentStatus').value='Pending';items=[];measurements=[];photos=[];addItem();renderMeasurements();renderPhotos();calculate();$('saveBtn').textContent='Save order'}
+ function saveOrder(){if(!validate())return;let order=getForm(),all=loadOrders(),idx=all.findIndex(o=>o.id===order.id);if(idx>=0)all[idx]=order;else all.unshift(order);if(persist(all)){editingId=order.id;$('saveBtn').textContent='Update order';renderOrders();alert('Order saved successfully.');}}
+ function renderOrders(){const q=$('searchOrders').value.trim().toLowerCase(),list=loadOrders().filter(o=>(o.customer||'').toLowerCase().includes(q)||(o.mobile||'').toLowerCase().includes(q));$('orderCount').textContent=`${list.length} order(s)`;$('ordersBody').innerHTML=list.length?'':'<tr><td colspan="7" class="empty">No saved orders found.</td></tr>';list.forEach(o=>{const tr=document.createElement('tr');tr.className='order-row';tr.innerHTML=`<td class="fw-semibold">${esc(o.orderNo)}</td><td>${esc(o.customer)}</td><td>${esc(o.mobile||'—')}</td><td>${esc(o.orderDate||'—')}</td><td>${money(o.total)}</td><td><span class="status-pill">${esc(o.status)}</span></td><td><div class="d-flex gap-1"><button class="btn btn-sm btn-outline-green edit">Edit</button><button class="btn btn-sm btn-outline-danger delete">Delete</button></div></td>`;tr.querySelector('.edit').onclick=()=>editOrder(o.id);tr.querySelector('.delete').onclick=()=>deleteOrder(o.id);$('ordersBody').appendChild(tr)})}
+ function editOrder(id){const o=loadOrders().find(x=>x.id===id);if(!o)return;editingId=o.id;$('customer').value=o.customer||'';$('mobile').value=o.mobile||'';$('address').value=o.address||'';$('orderNo').value=o.orderNo;$('orderDate').value=o.orderDate||today();$('deliveryDate').value=o.deliveryDate||'';items=(o.items||[]).map(x=>({...x}));measurements=(o.measurements||[]).map(m=>({type:m.type,values:{...(m.values||{})},notes:m.notes||''}));renderMeasurements();photos=[...(o.photos||[])];$('advance').value=o.advance||0;renderItems();renderPhotos();calculate();$('saveBtn').textContent='Update order';window.scrollTo({top:0,behavior:'smooth'})}
+ function deleteOrder(id){const o=loadOrders().find(x=>x.id===id);if(!o||!confirm(`Delete order ${o.orderNo} for ${o.customer}? This cannot be undone.`))return;persist(loadOrders().filter(x=>x.id!==id));if(editingId===id)resetForm();renderOrders()}
+ function renderPhotos(){const grid=$('photoGrid');grid.innerHTML='';photos.forEach((p,i)=>{const d=document.createElement('div');d.className='photo-item';const img=document.createElement('img');img.src=p.data;img.alt=p.name||'Customer design photo';const b=document.createElement('button');b.type='button';b.textContent='×';b.title='Remove photo';b.onclick=()=>{photos.splice(i,1);renderPhotos()};d.append(img,b);grid.appendChild(d)})}
+ async function photoToDataUrl(file){
+  const ext=(file.name||'').toLowerCase().split('.').pop();
+  const allowed=/^image\/(jpeg|jpg|png|webp|heic|heif)$/i.test(file.type||'') || ['jpg','jpeg','png','webp','heic','heif'].includes(ext);
+  if(!allowed) throw new Error('Please choose a JPG, PNG or image file.');
+  if(file.size>15*1024*1024) throw new Error('Please choose an image smaller than 15 MB.');
+  const original=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=()=>reject(new Error('Could not read selected photo.'));r.readAsDataURL(file)});
+  const img=await new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('This photo format could not be opened. Please choose JPG or PNG.'));im.src=original});
+  const max=1500, ratio=Math.min(1,max/Math.max(img.width,img.height));
+  const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*ratio));canvas.height=Math.max(1,Math.round(img.height*ratio));
+  const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);
+  return canvas.toDataURL('image/jpeg',0.82);
+ }
+ $('photosInput').addEventListener('change',async e=>{
+  const files=[...(e.target.files||[])]; if(!files.length)return;
+  for(const f of files){try{const data=await photoToDataUrl(f);photos.push({name:f.name||'Customer photo',data});}catch(err){alert((f.name||'Photo')+': '+err.message)}}
+  renderPhotos(); e.target.value='';
+ });
+ function invoiceHTML(o){const rows=o.items.map((it,i)=>`<tr><td>${i+1}</td><td>${esc(it.name)}</td><td>${it.qty}</td><td>${money(it.rate)}</td><td>${money(it.qty*it.rate)}</td></tr>`).join('');const measureRows=(o.measurements||[]).map(m=>`<tr><td style="padding:7px;border:1px solid #ddd;vertical-align:top"><b>${esc(m.type)}</b></td><td style="padding:7px;border:1px solid #ddd">${Object.entries(m.values||{}).filter(([k,v])=>String(v).trim()).map(([k,v])=>`${esc(k)}: ${esc(v)} in`).join('<br>')}${m.notes?`<br><i>${esc(m.notes)}</i>`:''}</td></tr>`).join('');
+ const measureBlock=measureRows?`<div style="margin-top:18px"><b style="font-size:12px">Garment Measurements</b><table style="width:100%;border-collapse:collapse;font-size:11px;margin-top:7px"><thead><tr style="background:#edf2ed"><th style="padding:7px;border:1px solid #ddd">Garment</th><th style="padding:7px;border:1px solid #ddd;text-align:left">Measurements / Notes</th></tr></thead><tbody>${measureRows}</tbody></table></div>`:'';
+ const imgs=(o.photos||[]).map(p=>`<img src="${p.data}" style="width:105px;height:95px;object-fit:cover;border:1px solid #ddd;border-radius:4px;margin:5px">`).join('');return `<div style="font-family:Arial,sans-serif;color:#202a27;background:white;padding:24px;max-width:790px;margin:auto"><div style="text-align:center;border-bottom:3px solid #c79a52;padding-bottom:15px"><div style="font-size:25px;font-weight:bold;color:#173b35">SWAMINATHAN FASHION TAILORING</div><div style="font-size:11px;letter-spacing:2px;margin-top:5px">ORDER RECEIPT / INVOICE</div></div><div style="display:flex;justify-content:space-between;margin:18px 0;font-size:12px"><div><b>Order No:</b> ${esc(o.orderNo)}<br><b>Order Date:</b> ${esc(o.orderDate||'—')}<br><b>Delivery Date:</b> ${esc(o.deliveryDate||'—')}</div><div style="text-align:right"><b>Payment:</b> ${esc(o.status)}</div></div><div style="background:#f3f6f3;padding:12px;margin-bottom:16px;font-size:12px"><b>Customer:</b> ${esc(o.customer)}<br><b>Mobile:</b> ${esc(o.mobile||'—')}<br><b>Address:</b> ${esc(o.address||'—').replace(/\n/g,'<br>')}</div><table style="width:100%;border-collapse:collapse;font-size:12px"><thead><tr style="background:#edf2ed"><th style="padding:9px;border:1px solid #ddd">S.No</th><th style="padding:9px;border:1px solid #ddd;text-align:left">Material / Dress</th><th style="padding:9px;border:1px solid #ddd">Qty</th><th style="padding:9px;border:1px solid #ddd">Rate</th><th style="padding:9px;border:1px solid #ddd">Total</th></tr></thead><tbody>${rows}</tbody></table><div style="margin:16px 0 10px auto;width:270px;font-size:12px"><div style="display:flex;justify-content:space-between;padding:5px"><b>Grand Total</b><b>${money(o.total)}</b></div><div style="display:flex;justify-content:space-between;padding:5px"><span>Advance</span><span>${money(o.advance)}</span></div><div style="display:flex;justify-content:space-between;padding:5px;border-top:1px solid #bbb"><b>Balance</b><b>${money(o.balance)}</b></div></div><div style="font-size:11px;background:#f7f7f4;padding:10px;margin:14px 0"><b>Amount in words:</b> ${numberWords(o.total)}</div>${measureBlock}${imgs?`<div style="margin-top:18px"><b style="font-size:12px">Customer / Design Photos</b><div>${imgs}</div></div>`:''}<div style="display:flex;justify-content:space-between;margin-top:55px;font-size:11px"><div style="width:38%;border-top:1px solid #555;padding-top:7px;text-align:center">Customer Signature</div><div style="width:38%;border-top:1px solid #555;padding-top:7px;text-align:center">Tailor Signature</div></div><div style="text-align:center;margin-top:25px;font-size:10px;color:#777">Thank you for choosing SWAMINATHAN FASHION TAILORING.</div></div>`}
+ async function makePDF(){if(!validate())return;const o=getForm();const target=$('invoicePrint');target.innerHTML=invoiceHTML(o);target.style.display='block';try{if(!window.jspdf||!window.html2canvas)throw new Error('PDF libraries did not load. Check your internet connection and reload the page.');const canvas=await html2canvas(target,{scale:2,useCORS:true,backgroundColor:'#ffffff'});const img=canvas.toDataURL('image/jpeg',.94);const {jsPDF}=window.jspdf;const pdf=new jsPDF('p','mm','a4');const pageW=210,pageH=297,margin=7,imgW=pageW-margin*2,imgH=canvas.height*imgW/canvas.width,usable=pageH-margin*2;let y=margin,remaining=imgH,sourceY=0;while(remaining>0.5){const sliceH=Math.min(usable,remaining),slice=document.createElement('canvas');slice.width=canvas.width;slice.height=Math.max(1,Math.min(canvas.height-Math.round(sourceY*canvas.width/imgW),Math.round(sliceH*canvas.width/imgW)));const ctx=slice.getContext('2d');ctx.drawImage(canvas,0,Math.round(sourceY*canvas.width/imgW),canvas.width,slice.height,0,0,canvas.width,slice.height);pdf.addImage(slice.toDataURL('image/jpeg',.92),'JPEG',margin,y,imgW,sliceH);remaining-=sliceH*imgW/canvas.width;sourceY+=slice.height;if(remaining>0.5){pdf.addPage();y=margin}}(()=>{const filename=`${(o.orderNo||'Tailoring-Order').replace(/[^a-z0-9-_]/gi,'_')}.pdf`;if(window.AndroidBridge){const b64=pdf.output('datauristring').split(',')[1];window.AndroidBridge.saveBase64File(filename,'application/pdf',b64)}else{pdf.save(filename)}})()}catch(err){alert('PDF generation failed: '+err.message)}finally{target.style.display='none'}}
+ function printInvoice(){if(!validate())return;const target=$('invoicePrint');target.innerHTML=invoiceHTML(getForm());target.style.display='block';if(window.AndroidBridge&&typeof AndroidBridge.printInvoice==='function'){AndroidBridge.printInvoice();}else{window.print();}setTimeout(()=>{target.style.display='none'},1200)}
+
+ function exportExcel(){
+  if(!window.XLSX){alert('Excel library did not load. Check your internet connection and reload.');return}
+  const orders=loadOrders();
+  const orderRows=orders.map(o=>({OrderNo:o.orderNo,Customer:o.customer,Mobile:o.mobile,Address:o.address,OrderDate:o.orderDate,DeliveryDate:o.deliveryDate,Total:o.total,Advance:o.advance,Balance:o.balance,PaymentStatus:o.status}));
+  const itemRows=orders.flatMap(o=>(o.items||[]).map((x,i)=>({OrderNo:o.orderNo,Customer:o.customer,SerialNo:i+1,GarmentOrMaterial:x.name,Quantity:x.qty,Rate:x.rate,LineTotal:(Number(x.qty)||0)*(Number(x.rate)||0)})));
+  const measurementRows=orders.flatMap(o=>(o.measurements||[]).map(m=>({OrderNo:o.orderNo,Customer:o.customer,Garment:m.type,Measurements:Object.entries(m.values||{}).map(([k,v])=>`${k}: ${v} in`).join('; '),Notes:m.notes||''})));
+  const backupRows=orders.map(o=>({OrderNo:o.orderNo,RecordJSON:JSON.stringify({...o,photos:[]})}));
+  const wb=XLSX.utils.book_new();
+  [['Orders',orderRows],['Items',itemRows],['Measurements',measurementRows],['Backup',backupRows]].forEach(([name,rows])=>XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(rows),name));
+  (()=>{const filename=`Swaminathan_Tailoring_Backup_${today()}.xlsx`;if(window.AndroidBridge){const b64=XLSX.write(wb,{bookType:'xlsx',type:'base64'});window.AndroidBridge.saveBase64File(filename,'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',b64)}else{XLSX.writeFile(wb,filename)}})();
+ }
+ async function importExcel(e){
+  const file=e.target.files[0];if(!file)return;
+  if(!window.XLSX){alert('Excel library did not load. Check your internet connection and reload.');e.target.value='';return}
+  if(!confirm('Restore orders from this Excel backup? Orders with matching order numbers will be replaced. Existing browser photos will be retained for matching orders.')){e.target.value='';return}
+  try{
+   const wb=XLSX.read(await file.arrayBuffer(),{type:'array'});
+   if(!wb.Sheets.Backup)throw new Error('This workbook has no Backup sheet. Please choose an Excel backup created by this application.');
+   const rows=XLSX.utils.sheet_to_json(wb.Sheets.Backup);
+   const current=loadOrders(),map=new Map(current.map(o=>[o.orderNo,o]));
+   let restored=0;
+   for(const row of rows){if(!row.RecordJSON)continue;const o=JSON.parse(row.RecordJSON);if(!o.orderNo||!o.customer)continue;const previous=map.get(o.orderNo);o.id=previous?.id||o.id||('restore-'+Date.now()+'-'+restored);o.photos=previous?.photos||[];o.updatedAt=new Date().toISOString();map.set(o.orderNo,o);restored++}
+   if(!restored)throw new Error('No valid order records were found in the Backup sheet.');
+   if(persist([...map.values()])){renderOrders();alert(`${restored} order record(s) restored. Photos for matching orders were retained from this browser.`)}
+  }catch(err){alert('Excel restore failed: '+err.message)}
+  e.target.value='';
+ }
+
+ $('addMeasurement').onclick=()=>addMeasurement();$('exportExcel').onclick=exportExcel;$('importExcel').addEventListener('change',importExcel);
+ $('addRow').onclick=()=>addItem();$('saveBtn').onclick=saveOrder;$('pdfBtn').onclick=makePDF;$('printBtn').onclick=printInvoice;$('newBtn').onclick=()=>{if(confirm('Start a new order? Unsaved changes will be cleared.'))resetForm()};$('clearBtn').onclick=()=>{if(confirm('Clear all fields and photos from this form? Saved orders will not be deleted.'))resetForm()};$('advance').addEventListener('input',calculate);$('searchOrders').addEventListener('input',renderOrders);
+ resetForm();renderOrders();
+})();
+</script>
+</body></html>
